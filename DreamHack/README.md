@@ -5,3 +5,10 @@
 ## EN
 - This space is record solve the wargame or CTF
 - Each file represents the difficulty tier of the problem.
+
+
+# wARGAME Ranking
+
+| Date | Rank | Solved |
+|---|---|---|
+| 2026-07-06 | 16969 | 7 |
