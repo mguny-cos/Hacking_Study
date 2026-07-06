@@ -7,7 +7,7 @@
 - Each file represents the difficulty tier of the problem.
 
 
-# wARGAME Ranking
+# WARGAME Ranking
 
 | Date | Rank | Solved |
 |---|---|---|
