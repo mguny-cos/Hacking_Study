@@ -12,13 +12,9 @@ This space is my record about study for hacking and solve the wargame and CTF
 
 | Platform | Solved |
 |----------|-------:|
-| Dreamhack | 8 |
+| [Dreamhack](./Dreamhack) | 8 |
 | PicoCTF | 0 |
 ## 📚 Study Progress
-
+[Study Note](./Theory)
 - [ ] Linux Basics
 - [ ] Assembly Language
-
-📖 Total Writeups : [DreamHack](../DreamHack) 2<br>
-📚 [Study Notes](../../Theory) : 1<br>
-🔥 Current Focus : Web Hacking<br>
