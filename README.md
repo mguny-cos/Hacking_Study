@@ -5,3 +5,9 @@
 
 ## EN
 This space is my record about study for hacking and solve the wargame and CTF
+
+
+# INFO
+📖 Total Writeups : 35<br>
+📚 Study Notes : 52<br>
+🔥 Current Focus : Docker / Web Hacking<br>
