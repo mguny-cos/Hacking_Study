@@ -12,7 +12,7 @@ This space is my record about study for hacking and solve the wargame and CTF
 
 | Platform | Solved |
 |----------|-------:|
-| [Dreamhack](./Dreamhack) | 8 |
+| [Dreamhack](./DreamHack) | 8 |
 | PicoCTF | 0 |
 ## 📚 Study Progress
 [Study Note](./Theory)
