@@ -10,10 +10,10 @@ This space is my record about study for hacking and solve the wargame and CTF
 # INFO
 ## 🏆 Wargame Progress
 
-| Platform | Solved |
-|----------|-------:|
-| [Dreamhack](./DreamHack) | 8 |
-| PicoCTF | 0 |
+| Platform | Solved | Writeups |
+|----------|---------|---------|
+| [Dreamhack](./DreamHack) | 8 | 2 |
+| PicoCTF | 0 | 0 |
 ## 📚 Study Progress
 [Study Note](./Theory)
 - [ ] Linux Basics
