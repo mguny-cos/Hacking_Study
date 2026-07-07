@@ -56,3 +56,6 @@ https://regexper.com/ 이 사이트로 들어가 정규표현식을 입력하면
 나는 `drrrrrre1am@bbb.b`으로 했다. 결과는<br>
 <img width="560" height="49" alt="image" src="https://github.com/user-attachments/assets/6014320f-4f93-4afd-99b4-22a9cf5de4dd" /><br>
 성공적으로 FLAG를 찾아낼 수 있었다.
+
+# 어려웠던 점
+아직 python언어에 대한 이해도가 떨어지고 `re.match` 파이썬 정규표현 방법을 외우지 않아 해석하는데 조금 시간이 걸렸다.
