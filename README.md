@@ -8,6 +8,6 @@ This space is my record about study for hacking and solve the wargame and CTF
 
 
 # INFO
-📖 Total Writeups : [DreamHack](../DreamHack)2<br>
+📖 Total Writeups : [DreamHack](../DreamHack) 2<br>
 📚 [Study Notes](../Theory) : 1<br>
 🔥 Current Focus : Web Hacking<br>
