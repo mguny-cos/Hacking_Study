@@ -1,13 +1,13 @@
 # Hacking_Study
 
-## KR
+### KR
 제가 해킹 공부할 때 배운 이론 정리와 배운 이론을 바탕으로 풀이한 워게임 및 CTF를 기록하는 곳입니다.
 
-## EN
+### EN
 This space is my record about study for hacking and solve the wargame and CTF
 
 
 # INFO
-📖 Total Writeups : 35<br>
-📚 Study Notes : 52<br>
-🔥 Current Focus : Docker / Web Hacking<br>
+📖 Total Writeups : 2<br>
+📚 Study Notes : 1<br>
+🔥 Current Focus : Web Hacking<br>
