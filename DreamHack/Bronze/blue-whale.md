@@ -1,3 +1,10 @@
+| 항목 | 내용 |
+|------|------|
+| 📅 풀이 날짜 | 2026-07-06 |
+| 📚 해킹 분야 | misc |
+| 🔗 문제 링크 | [blue-whale](https://dreamhack.io/wargame/challenges/853)|
+
+
 # 1. docker 이미지 다운로드
 
   우선, 문제에 나와있는 대로 docker 이미지를 docker hub에서 다운로드 받아야 한다. 명령어는 다음과 같다.
