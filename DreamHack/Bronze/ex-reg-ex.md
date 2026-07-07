@@ -2,6 +2,7 @@
 |------|------|
 | 📅 풀이 날짜 | 2026-07-07 |
 | 📚 해킹 분야 | Web Hacking |
+| 🔗 문제 링크 | [ex-reg-ex](https://dreamhack.io/wargame/challenges/834)|
 
 # 1. 문제 파악하기
 우선 이 문제가 무엇을 구하는 것인지 파악해야 한다.<br>
