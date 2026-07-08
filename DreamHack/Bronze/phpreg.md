@@ -142,3 +142,55 @@
    위의 모든 과정을 통과하면 `system`함수를 호출 시킨 후 `system`함수에 `cmd`변수에 있는 값을 넣어 실행시키고 결과를 출력한다.
 
 ## 풀이
+<img width="558" height="318" alt="image" src="https://github.com/user-attachments/assets/592d4a7b-a3f2-447e-9734-b0fb1a16a533" /><br>
+분석과정에서 얻은 정보에 따르면 위의 화면에서
+`Nickname`칸은 `input_name`에 저장되는 값이므로 `dnyang0310`가 들어가야 하며 `nyang`글자를 입력하면 공백으로 대체된다. <br>
+`Password`칸은 `input_pw`에 저장되는 값이므로 `d4y0r50ng+1+13`가 들어가야 하며 문자가 들어가면 안되고 `/\d*\@\d{2,3}(31)+[^0-8\"]\!/`이 정규표현식에 매치되는 값을 입력하면 `d4y0r50ng`으로 대체된다.<br><br>
+우선 `/\d*\@\d{2,3}(31)+[^0-8\"]\!/`이 [정규표현식을 시각화 해주는 사이트](https://regexper.com) 에서 시각화를 해보면 다음과 같이 나온다.
+<img width="453" height="95" alt="image" src="https://github.com/user-attachments/assets/0b622e01-05df-4958-973c-ce2fd9bf8215" /><br>
+시각화 결과를 보면 `정수 0개 이상 + @ + 2개 이상 3개 이하의 정 + 31 + 0-8 혹은 " 를 제외한 문자 한 개+ !` 이에 매치되는 문자를 입력하면 매치되는 정규 표현식이다. 여기서 시각화 한 사진에는
+정규표현식에서 `\d{2,3}` 부분이 `digit 1...2times`라고 표시 되어있는데 이는 오류로 보인다. `\d{2,3}` 이 정규 표현식은 `정수를 2회 이상 3회 이하` 넣으라는 뜻이므로 정규표현식 대로 진행해주면 된다.<br>
+나는 `1@34319!`로 하겠다.<br>
+<br>
+정규 표현식은 해석을 완료 하였으니 `Nickname`칸에 `dnyang0310`을 어떻게 넣을지가 관건이다.<br>
+`nyang`을 직접 넣으면 공백으로 치환하니 이를 이용하면 되겠다. `dnynyangang0310`이런 식으로 입력하면 `dny***nyang***ang` nyang 부분이 공백 처리 되면서 `dnyang0310`이 입력되게 된다.<br>
+<br>
+`Nickname`칸도 해결 하였으니 이제 `Password`칸을 해결하면 된다.<br>
+이 웹페이지 php코드에서 요구하는 `password`칸 입력값은 `d4y0r50ng+1+13`이지만
+ ```php
+   if (preg_match("/[a-zA-Z]/", $input_pw)) {
+     echo "alphabet in the pw :(";
+   }
+ ```
+이 코드 때문에 문자 입력이 되지 않으므로<br>
+정규 표현식을 해석하여 나온 결과인 `1@34319!`를 입력하여 `d4y0r50ng`로 변환시킨다. 위의 php코드에서 요구하는 입력값은 `d4y0r50ng+1+13` 이므로<br>
+`1@34319!`이 정규 표현식에 `+1+13`을 붙인 `1@34319!+1+13`를 입력해주면 되겠다.<br>
+<img width="455" height="339" alt="image" src="https://github.com/user-attachments/assets/dc802bb3-67e0-4b6c-969a-b9e36dd3621e" /><br>
+<img width="296" height="334" alt="image" src="https://github.com/user-attachments/assets/c6784d6e-d7b7-4d14-8966-558393aef68c" /><br>
+위의 사진과 같이 성공적으로 `step2`로 넘어올 수 있다.<br>
+<br>
+이 화면에서 해야 할 일은 `분석 4번`부터 관련이 있다. `cmd` 변수에 웹페이지 `Command` 칸에 입력받은 값을 `system`함수에서 실행시키는 것이 이 웹페이지의 기능이다.<br>
+`system` 함수는 셸을 통해 외부 프로그램을 실행해주는 역할을 해주므로 `Command`칸에 입력되어야 하는 명령어는 파일의 내용을 볼 수 있는 명령어인 `cat`명령어이다. 따라서 입력해야 하는 명령어 전체는 `cat ../dream/flag.txt/`가 되어야 하는데..
+ ```php
+   else if (preg_match("/flag/i", $cmd)) {
+     echo "<pre>Error!</pre>";
+   }
+ ```
+이 부분 때문에 `flag`라는 글자는 못들어간다.<br>
+해결 방법은 `와일드 카드(*)`를 사용하는 것이다. 셸에는 와일드 카드라는 것이 존재한다. 파일 명을 모르지만 실행은 시키고 싶을 때 사용하는 것이 와일드 카드이다. 사용법은 `*`을 붙이는 것이다. 이 `*`의 의미는 `0개 이상의 임의의 문자와 매칭하겠다.`라는 뜻이다. 예를 들면
+| 패턴 | 매칭되는 파일 |
+|------|------|
+| `*.txt` | `a.txt`, `flag.txt`, `hello.txt` |
+| `fla*.txt` | `flag.txt`, `flash.txt`, `flame.txt` |
+<br>
+이런 식으로 기능을 한다. 따라서 이 와일드 카드를 사용하면 해결할 수 있다. `cat ../dream/flag.txt/`를 입력하면 `flag`가 걸러지게 되니까 `cat ../dream/fla*.txt`를 입력해주자.<br>
+<img width="787" height="368" alt="image" src="https://github.com/user-attachments/assets/8337e3ea-445b-4162-bc6b-bebb7a8ca09d" /><br>
+<img width="1008" height="345" alt="image" src="https://github.com/user-attachments/assets/b8054e2c-bae5-4d0d-94e8-6fcfc67613c4" /><br>
+위의 사진과 같이 FLAG를 성공적으로 획득하여 문제를 풀 수 있게 된다.
+
+## 마무리
+이 문제는 웹페이지의 PHP 코드와 정규 표현식과 셸의 기능을 알고 있어야 풀 수 있는 문제였다. 나는 `PHP 기초 지식`과 `정규 표현식의 지식`이 있어 이 부분은 어렵지 않았지만 셸 기능중 하나인 `와일드 카드`기능과 `system()`함수를 알고 있지 못해 많은 어려움을 겪었다. AI의 도움을 받아 풀 수 있었지만 나 자신의 힘으로 풀어내지 못해 아쉬움이 남는다.
+
+
+
+
