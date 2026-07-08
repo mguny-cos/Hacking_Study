@@ -183,7 +183,7 @@
 | `*.txt` | `a.txt`, `flag.txt`, `hello.txt` |
 | `fla*.txt` | `flag.txt`, `flash.txt`, `flame.txt` |
 <br>
-이런 식으로 기능을 한다. 따라서 이 와일드 카드를 사용하면 해결할 수 있다. `cat ../dream/flag.txt/`를 입력하면 `flag`가 걸러지게 되니까 `cat ../dream/fla*.txt`를 입력해주자.<br>
+이런 식으로 기능을 한다. 따라서 이 와일드 카드를 사용하면 해결할 수 있다. `cat ../dream/flag.txt/ `를 입력하면 `flag`가 걸러지게 되니까 `cat ../dream/fla*.txt`를 입력해주자.<br>
 <img width="787" height="368" alt="image" src="https://github.com/user-attachments/assets/8337e3ea-445b-4162-bc6b-bebb7a8ca09d" /><br>
 <img width="1008" height="345" alt="image" src="https://github.com/user-attachments/assets/b8054e2c-bae5-4d0d-94e8-6fcfc67613c4" /><br>
 위의 사진과 같이 FLAG를 성공적으로 획득하여 문제를 풀 수 있게 된다.
